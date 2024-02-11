@@ -1,12 +1,19 @@
 package com.araujocode.course.entities;
 
+import jakarta.persistence.*;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+
 import java.io.Serial;
 import java.io.Serializable;
 import java.util.Objects;
-
+@Entity
+@Table(name = "tb_user")
 public class User implements Serializable {
     @Serial
     private static final long serialVersionUID = -9183494815101835871L;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String name;
     private String email;
