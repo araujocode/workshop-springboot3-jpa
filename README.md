@@ -19,6 +19,8 @@ To run this project, you need to have the following installed:
 - Java Development Kit (JDK) version 8 or higher
 - Maven
 - IDE (e.g., IntelliJ IDEA, Eclipse) - Optional
+- Spring Boot 3
+- Hibernate/JPA
 
 ## Getting Started
 
