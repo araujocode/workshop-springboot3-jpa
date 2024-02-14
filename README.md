@@ -62,7 +62,6 @@ The project is structured as follows:
     - `Application.java`: Entry point of the Spring Boot application.
 - `src/main/resources`: Contains application properties and SQL scripts.
     - `application.properties`: Configuration properties.
-    - `data.sql`: SQL script to populate the database.
  
 ## Domain Model
 
