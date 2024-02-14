@@ -1,14 +1,8 @@
 package com.araujocode.course.config;
 
-import com.araujocode.course.entities.Category;
-import com.araujocode.course.entities.Order;
-import com.araujocode.course.entities.Product;
-import com.araujocode.course.entities.User;
+import com.araujocode.course.entities.*;
 import com.araujocode.course.entities.enums.OrderStatus;
-import com.araujocode.course.repositories.CategoryRepository;
-import com.araujocode.course.repositories.OrderRepository;
-import com.araujocode.course.repositories.ProductRepository;
-import com.araujocode.course.repositories.UserRepository;
+import com.araujocode.course.repositories.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
@@ -32,6 +26,9 @@ public class TestConfig implements CommandLineRunner {
 
     @Autowired
     private ProductRepository productRepository;
+
+    @Autowired
+    private OrderItemRepository orderItemRepository;
 
     @Override
     public void run(String... args) throws Exception {
@@ -67,6 +64,13 @@ public class TestConfig implements CommandLineRunner {
 
         userRepository.saveAll(Arrays.asList(u1,u2));
         orderRepository.saveAll(Arrays.asList(o1, o2, o3));
+
+        OrderItem oi1 = new OrderItem(o1, p1, 2, p1.getPrice());
+        OrderItem oi2 = new OrderItem(o1, p3, 1, p3.getPrice());
+        OrderItem oi3 = new OrderItem(o2, p3, 2, p3.getPrice());
+        OrderItem oi4 = new OrderItem(o3, p5, 2, p5.getPrice());
+
+        orderItemRepository.saveAll(Arrays.asList(oi1, oi2, oi3, oi4));
 
     }
 }
